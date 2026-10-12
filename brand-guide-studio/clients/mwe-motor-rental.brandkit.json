@@ -1,0 +1,37 @@
+{
+  "format": "pk-brandkit",
+  "version": 2,
+  "kit": {
+    "id": "mwe-motor-rental",
+    "name": "MWE Motor Rental",
+    "tagline": "Ride safe. Ride MWE.",
+    "fbCategory": "Company · Motorcycle rental",
+    "poloColor": "#0F294C",
+    "stickerLabel": "Helmet Included",
+    "fbPost": "Clean bikes, helmets included — delivered to your door.",
+    "colors": {
+      "primary": "#0F294C",
+      "secondary": "#B88917",
+      "accent": "#E39F0E",
+      "ink": "#1B1D2A",
+      "paper": "#F4F1EA"
+    },
+    "contacts": {
+      "phone": "+63 917 842 5560",
+      "email": "book@mwemotorrental.ph",
+      "website": "mwemotorrental.ph",
+      "address": "Cebu City, Philippines",
+      "facebook": "facebook.com/mwemotorrental",
+      "instagram": "@mwemotorrental"
+    },
+    "fonts": {
+      "heading": "\"Fraunces\", Georgia, serif",
+      "body": "\"Work Sans\", system-ui, sans-serif",
+      "mono": "\"Space Mono\", ui-monospace, monospace"
+    },
+    "fontsStyle": "editorial",
+    "toggles": { "fb": true, "ig": true, "polo": true, "cards": true, "stickers": true },
+    "logo": null,
+    "updated": "2026-10-11T00:00:00.000Z"
+  }
+}

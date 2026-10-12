@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prime Kreatives — Brand Guide Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,500&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/studio.css">
+</head>
+<body>
+<div class="app">
+
+  <!-- ======================= SIDEBAR ======================= -->
+  <aside class="sidebar">
+    <div class="pk-mark">
+      <span class="dot"></span>
+      <div>
+        <h1>Brand Guide Studio</h1>
+        <small>Prime Kreatives</small>
+      </div>
+    </div>
+
+    <div class="side-label">Pipeline</div>
+    <nav class="stage-nav">
+      <button class="stage-btn active" data-stage="1"><span class="num">1</span> Intake <span class="chev">›</span></button>
+      <button class="stage-btn" data-stage="2"><span class="num">2</span> Logo check <span class="chev">›</span></button>
+      <button class="stage-btn" data-stage="3"><span class="num">3</span> Generate <span class="chev">›</span></button>
+      <button class="stage-btn" data-stage="4"><span class="num">4</span> QA gate <span class="chev">›</span></button>
+      <button class="stage-btn" data-stage="5"><span class="num">5</span> Export <span class="chev">›</span></button>
+    </nav>
+
+    <div class="side-label">Clients <span id="clientName" style="float:right;font-weight:400;text-transform:none;letter-spacing:0;font-family:'Work Sans'"></span></div>
+    <div id="registry"></div>
+    <div class="btn-row" style="margin-top:10px">
+      <button class="mini-btn" id="newClient">+ New</button>
+      <button class="mini-btn" id="saveClient">Save</button>
+    </div>
+    <div class="btn-row" style="margin-top:8px">
+      <button class="mini-btn" id="exportKit">Export .brandkit.json</button>
+    </div>
+    <div class="btn-row" style="margin-top:8px">
+      <label class="mini-btn" for="importKit" style="cursor:pointer">Import kit</label>
+      <input type="file" id="importKit" accept=".json" class="sr">
+    </div>
+    <div class="btn-row" style="margin-top:8px">
+      <button class="mini-btn" id="seedMwe">Load MWE sample</button>
+    </div>
+  </aside>
+
+  <!-- ======================= MAIN ======================= -->
+  <main class="main">
+
+    <!-- ---------- STAGE 1 · INTAKE ---------- -->
+    <section class="stage active" data-stage="1">
+      <h2>Intake</h2>
+      <p class="lede">Nothing renders until every required field is green. This is the gate that used to fail on a missing upload and on invented sample details.</p>
+
+      <div class="card">
+        <h3>Brand identity</h3>
+        <div class="grid2">
+          <div class="field">
+            <label>Client / brand name <span class="req">required</span></label>
+            <input type="text" id="f-name" placeholder="MWE Motor Rental">
+          </div>
+          <div class="field">
+            <label>Tagline <span class="hint">optional</span></label>
+            <input type="text" id="f-tagline" placeholder="Ride safe. Ride MWE.">
+          </div>
+        </div>
+        <div class="grid2">
+          <div class="field">
+            <label>FB page category <span class="hint">optional</span></label>
+            <input type="text" id="f-fbCategory" placeholder="Company · Motorcycle rental">
+          </div>
+          <div class="field">
+            <label>Typography pair</label>
+            <select id="f-fontsStyle">
+              <option value="editorial">Editorial — Fraunces + Work Sans</option>
+              <option value="modern">Modern — Archivo</option>
+              <option value="bold">Bold — Oswald</option>
+              <option value="friendly">Friendly — Nunito</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Colors <span style="letter-spacing:0;text-transform:none;font-family:'Work Sans';opacity:.6">— full role set is generated automatically</span></h3>
+        <div class="grid3">
+          <div class="field">
+            <label>Primary <span class="req">required</span></label>
+            <div style="display:flex;gap:8px">
+              <input type="color" id="pick-primary" style="width:52px;flex:none">
+              <input type="text" id="col-primary">
+            </div>
+          </div>
+          <div class="field">
+            <label>Secondary <span class="req">required</span></label>
+            <div style="display:flex;gap:8px">
+              <input type="color" id="pick-secondary" style="width:52px;flex:none">
+              <input type="text" id="col-secondary">
+            </div>
+          </div>
+          <div class="field">
+            <label>Accent</label>
+            <div style="display:flex;gap:8px">
+              <input type="color" id="pick-accent" style="width:52px;flex:none">
+              <input type="text" id="col-accent">
+            </div>
+          </div>
+        </div>
+        <div class="grid3">
+          <div class="field">
+            <label>Ink <span class="hint">text + dark panels</span></label>
+            <div style="display:flex;gap:8px">
+              <input type="color" id="pick-ink" style="width:52px;flex:none">
+              <input type="text" id="col-ink">
+            </div>
+          </div>
+          <div class="field">
+            <label>Paper <span class="hint">backgrounds</span></label>
+            <div style="display:flex;gap:8px">
+              <input type="color" id="pick-paper" style="width:52px;flex:none">
+              <input type="text" id="col-paper">
+            </div>
+          </div>
+          <div class="field">
+            <label>Uniform color <span class="req">required if uniform</span></label>
+            <div style="display:flex;gap:8px">
+              <input type="color" id="pick-uniformColor" style="width:52px;flex:none" value="#0F294C">
+              <input type="text" id="f-uniformColor">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Contacts <span style="letter-spacing:0;text-transform:none;font-family:'Work Sans';opacity:.6">— real details only; the detector blocks obvious samples</span></h3>
+        <div class="grid2">
+          <div class="field"><label>Phone</label><input type="text" id="c-phone" placeholder="+63 917 842 5560"></div>
+          <div class="field"><label>Email</label><input type="text" id="c-email" placeholder="book@mwemotorrental.ph"></div>
+        </div>
+        <div class="grid2">
+          <div class="field"><label>Website</label><input type="text" id="c-website" placeholder="mwemotorrental.ph"></div>
+          <div class="field"><label>Address</label><input type="text" id="c-address" placeholder="Cebu City, Philippines"></div>
+        </div>
+        <div class="grid2">
+          <div class="field"><label>Facebook</label><input type="text" id="c-facebook" placeholder="facebook.com/mwemotorrental"></div>
+          <div class="field"><label>Instagram</label><input type="text" id="c-instagram" placeholder="@mwemotorrental"></div>
+        </div>
+        <div class="grid2">
+          <div class="field"><label>Sticker label</label><input type="text" id="f-stickerLabel" placeholder="Helmet Included"></div>
+          <div class="field"><label>Facebook post copy</label><input type="text" id="f-fbPost" placeholder="Clean bikes, helmets included."></div>
+        </div>
+        <div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:6px">
+          <label style="font-size:12.5px"><input type="checkbox" id="t-fb" checked> Facebook page</label>
+          <label style="font-size:12.5px"><input type="checkbox" id="t-ig" checked> Instagram</label>
+          <label style="font-size:12.5px"><input type="checkbox" id="t-linkedin" checked> LinkedIn</label>
+          <label style="font-size:12.5px"><input type="checkbox" id="t-uniform" checked> Employee uniform</label>
+          <label style="font-size:12.5px"><input type="checkbox" id="t-cards" checked> Business cards</label>
+          <label style="font-size:12.5px"><input type="checkbox" id="t-stickers" checked> Stickers</label>
+          <label style="font-size:12.5px"><input type="checkbox" id="t-store" checked> Storefront signage</label>
+          <label style="font-size:12.5px"><input type="checkbox" id="t-wallpaper" checked> Desktop wallpaper</label>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Pre-flight checks</h3>
+        <div id="intakeChecks"></div>
+        <div class="btn-row" style="margin-top:16px">
+          <span id="gateMsg" class="badge bad">checking</span>
+          <button class="btn btn-primary" onclick="PK.studio.goStage(2)">Continue to logo check</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- STAGE 2 · LOGO ---------- -->
+    <section class="stage" data-stage="2">
+      <h2>Logo check</h2>
+      <p class="lede">Resolution, transparency, flat-background removal and gradient detection with a confidence score. The old failure — "the uploads folder is empty" — is now a hard gate.</p>
+
+      <div class="card">
+        <h3>Logo file</h3>
+        <div id="dropzone" class="dropzone">
+          <b>Drop the logo here or click to browse</b>
+          <small>PNG, SVG or JPG · transparent preferred · 512 px minimum recommended</small>
+        </div>
+        <input type="file" id="logoFile" accept=".png,.svg,.jpg,.jpeg" class="sr">
+        <div class="samples">
+          <button class="mini-btn gold" id="demoLogo">Generate demo logo</button>
+          <button class="mini-btn" id="removeBg" disabled>Remove flat background</button>
+          <select id="bgTol" class="mini-btn" style="padding:6px 8px">
+            <option value="18">tolerance · tight</option>
+            <option value="26" selected>tolerance · normal</option>
+            <option value="40">tolerance · loose</option>
+          </select>
+        </div>
+        <h3 style="margin-top:22px">Health report</h3>
+        <div id="healthReport"></div>
+      </div>
+
+      <div class="card">
+        <h3>Derived variations</h3>
+        <p style="font-size:13px;color:rgba(244,241,234,.6);margin-bottom:14px">Primary · secondary (stacked) · submark · mono light + dark · one-color · favicon set — generated from the single upload.</p>
+        <div id="variationGrid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px"></div>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-primary" onclick="PK.studio.goStage(3)">Continue to generate</button>
+      </div>
+    </section>
+
+    <!-- ---------- STAGE 3 · GENERATE ---------- -->
+    <section class="stage" data-stage="3">
+      <h2>Generate deck</h2>
+      <p class="lede">Fourteen slides from the kit object — cover, primary logo, versions, palette, typography, Facebook, Instagram, LinkedIn, employee uniform, cards, stickers, storefront, wallpaper, thank-you. One button, deterministic filenames.</p>
+      <div class="card">
+        <h3>Render</h3>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="btnGenerate">Generate all slides</button>
+        </div>
+        <div class="meter" style="margin-top:16px"><i id="genProgress" style="width:0%"></i></div>
+      </div>
+      <div class="card">
+        <h3>Preview</h3>
+        <div id="slideStrip" class="btn-row" style="margin-bottom:14px"></div>
+        <div id="viewer"></div>
+        <div class="btn-row" style="margin-top:14px">
+          <button class="btn btn-ghost" id="prevSlide">‹ Prev</button>
+          <button class="btn btn-ghost" id="nextSlide">Next ›</button>
+        </div>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-primary" onclick="PK.studio.goStage(4)">Open QA gate</button>
+      </div>
+    </section>
+
+    <!-- ---------- STAGE 4 · QA ---------- -->
+    <section class="stage" data-stage="4">
+      <h2>QA gate</h2>
+      <p class="lede">Every slide was rendered and checked before you can export. This is the step that used to be Claude saying "I haven't opened or tested it yet".</p>
+      <div class="card">
+        <h3>Status</h3>
+        <div id="qaSummary" class="btn-row"></div>
+        <div class="btn-row" style="margin-top:14px">
+          <button class="mini-btn" id="btnRefreshQa">Re-run checks</button>
+          <label style="font-size:12.5px"><input type="checkbox" id="overrideQA"> Override and export anyway (logged)</label>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Issues</h3>
+        <div id="qaList"></div>
+      </div>
+      <div class="card">
+        <h3>Rendered slides</h3>
+        <div id="qaGrid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px"></div>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-primary" id="exportGate" disabled onclick="PK.studio.goStage(5)">Export section unlocked</button>
+      </div>
+    </section>
+
+    <!-- ---------- STAGE 5 · EXPORT ---------- -->
+    <section class="stage" data-stage="5">
+      <h2>Export &amp; deliver</h2>
+      <p class="lede">Deterministic folder layout: <code style="font-family:'Space Mono';font-size:12px">&lt;client&gt;/&lt;asset&gt;/&lt;file&gt;</code>. The review package is the single file the client opens — approval comes back as a certificate the studio imports.</p>
+
+      <div class="export-grid">
+        <div class="export-card">
+          <b>Full deck (PDF)</b>
+          <small>All 11 slides in one print-ready file. No internet needed.</small>
+          <button class="btn btn-primary" id="expPdf">Download PDF</button>
+        </div>
+        <div class="export-card">
+          <b>Editable deck (PPTX)</b>
+          <small>PowerPoint with each slide as a full-bleed image. Needs internet (CDN lib) on first use.</small>
+          <button class="btn btn-ghost" id="expPptx">Download PPTX</button>
+        </div>
+        <div class="export-card">
+          <b>Slide PNGs</b>
+          <small>01-cover.png … 11-thank-you.png, one download per file.</small>
+          <button class="btn btn-ghost" id="expPng">Download PNGs</button>
+        </div>
+        <div class="export-card">
+          <b>Social + screen pack</b>
+          <small>FB cover 1640×856, IG post/profile, LinkedIn banner 1584×396 + post + photo, wallpapers 1080p &amp; QHD, favicon set.</small>
+          <button class="btn btn-ghost" id="expSocial">Download pack</button>
+        </div>
+        <div class="export-card">
+          <b>Stickers (SVG)</b>
+          <small>Cut-ready die-cut outline with a white halo for vinyl cutting.</small>
+          <button class="btn btn-ghost" id="expSticker">Download SVG</button>
+        </div>
+        <div class="export-card">
+          <b>Client review package</b>
+          <small>One self-contained HTML — slides, comments, approve / request-revisions.</small>
+          <button class="btn btn-primary" id="expReview">Build review file</button>
+        </div>
+        <div class="export-card">
+          <b>Manifest</b>
+          <small>Brand roles, fonts, logo confidence, QA verdict and file list.</small>
+          <button class="btn btn-ghost" id="expManifest">Download manifest</button>
+        </div>
+        <div class="export-card">
+          <b>Import approval</b>
+          <small>Load the certificate the client emails back after reviewing.</small>
+          <label class="btn btn-ghost" for="importApproval" style="cursor:pointer">Import approval</label>
+          <input type="file" id="importApproval" accept=".json" class="sr">
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="statusbar">
+  <span id="stageLabel">STAGE 1 / 5</span>
+  <span class="grow"></span>
+  <span>BRAND GUIDE STUDIO · PRE-FLIGHT → QA → EXPORT</span>
+</footer>
+<div class="toast" id="toast"></div>
+
+<script src="js/lib/util.js"></script>
+<script src="js/lib/store.js"></script>
+<script src="js/lib/placeholder.js"></script>
+<script src="js/lib/intake.js"></script>
+<script src="js/lib/logo-health.js"></script>
+<script src="js/lib/variations.js"></script>
+<script src="js/lib/brand-system.js"></script>
+<script src="js/lib/slides.js"></script>
+<script src="js/lib/qa.js"></script>
+<script src="js/lib/export.js"></script>
+<script src="js/lib/review.js"></script>
+<script src="js/studio.js"></script>
+</body>
+</html>
